@@ -1,0 +1,57 @@
+@import "../global.scss";
+
+.table {
+  display: table;
+  margin-bottom: $base-font-size * 2;
+}
+
+.row {
+  display: table-row;
+}
+
+.cell {
+  display: table-cell;
+  padding: 5px;
+  color: #fff;
+}
+
+.primary {
+  background:  $color-primary;
+}
+
+.secondary {
+  background: adjust-hue($color-primary, 120);
+}
+
+.tertiary {
+  background: adjust-hue($color-primary, 240);
+}
+
+.cell {
+  &:nth-child(3n+1) {
+    @extend .primary
+  }
+  &:nth-child(3n+2) {
+    @extend .secondary
+  }
+  &:nth-child(3n+3) {
+    @extend .tertiary
+  }
+}
+
+.title {
+  font-size: $base-font-size * 2;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    & .nested-title {
+      color: #0f0;
+    }
+  }
+
+  & .nested-title {
+    color: #00f;
+    font-size: $base-font-size * 1.5;
+  }
+}
